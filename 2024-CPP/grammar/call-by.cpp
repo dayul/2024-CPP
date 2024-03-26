@@ -2,15 +2,15 @@
 
 using namespace std;
 
-void call_by_value(int val) {
-	// 새로운 지역변수 val을 만들고 값을 넣음
-	val = 10;
+void call_by_pointer(int* val) {
+	// 포인터 변수 val만들고 가르키고 있는 num의 값이 변경됨
+	*val = 10;
 }
 
 int main(void) {
 
 	int num = 4;		
-	call_by_value(num);		// num의 값은 바뀌지 않음
+	call_by_pointer(&num);		// num의 주소값을 넘김, 값이 바뀜
 	cout << num;
 	
 	return 0;
