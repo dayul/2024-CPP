@@ -16,6 +16,21 @@ int main(void) {
 
 	printf("%d %d\n", &str, &str[1]);		// 주소값 1byte 만큼의 차이
 
+
+	int i = 1;
+	char c = 'b';
+	double d = 3.0;
+
+	int* pi = &i;
+	char* pc = &c;
+	double* pd = &d;
+
+	printf("%d %d %d\n", pi, pc, pd);
+	printf("%d %d %d\n", pi + 1, pc + 1, pd + 1);
+	// 각각 4, 1, 8 차이
+
+	// printf("%d %d %d\n, sizeof(pi), sizeof(pc), sizeof(pd));
+	// 4, 4, 4 포인터 변수의 크기는 4byte
 	
 	return 0;
 }
