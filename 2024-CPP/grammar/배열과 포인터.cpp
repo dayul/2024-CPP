@@ -31,6 +31,11 @@ int main(void) {
 
 	// printf("%d %d %d\n, sizeof(pi), sizeof(pc), sizeof(pd));
 	// 4, 4, 4 포인터 변수의 크기는 4byte
+
+	pi = arr;		// 배열은 주소
+	printf("%d %d\n", pi + 1, arr + 1);			// 밑의 두 문장과 값이 같음
+	printf("%d %d\n", *(pi + 1), *(arr + 1));
+	printf("%d %d\n", pi[1], arr[1]);
 	
 	return 0;
 }
