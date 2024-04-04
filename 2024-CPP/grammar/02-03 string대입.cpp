@@ -1,12 +1,12 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
 
 int main(void) {
 
-	char str[30] = "develop hungry";
-	char str2[30];
+	std::string str = "develop hungry";		// 객체로 저장됨 (C++)
+	std::string str2;
 
-	// 1. str에 있는 내용을 str2에 복사
+	// 1. str에 있는 내용을 str2에 복사 (C언어 방식)
 	//int i = 0;
 	//for (; str[i] != '\0'; i++) {
 	//	str2[i] = str[i];
@@ -14,10 +14,13 @@ int main(void) {
 	//str2[i] = str[i];	// 널문자('\0') 복사
 
 
-	// 2. str에 있는 내용을 str2에 복사
-	strcpy(str2, str);
+	// 2. str에 있는 내용을 str2에 복사	(C언어 방식)
+	//strcpy(str2, str);
 
-	printf("%s", str2);
+
+	// 3. str에 있는 내용을 str2에 복사 (C++ 방식)
+	str2 = str;
+	std::cout << str2;
 
 	return 0;
 }
