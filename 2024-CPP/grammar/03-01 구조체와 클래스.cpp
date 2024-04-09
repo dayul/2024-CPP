@@ -4,17 +4,22 @@
 using namespace std;
 
 class Student {
+private :
 	int hakbun_;
 	string name_;
+
+// 생성자 : 객체가 생성될 때 호출되는 함수
+// 생성자는 반환형, return 타입이 없다.
+public :
+	Student(int hakbun, string name){
+		hakbun_ = hakbun;
+		name_ = name;
+	}
 };
 
 int main(void) {
 	
-	Student dayul;		// C++에서는 struct 키워드 빼도 됨
-	// 구조체는 default가 public
-	// 클래스는 default가 private
-	dayul.hakbun_ = 2215;
-	dayul.name_ = "추다율";
+	Student dayul = Student(2215, "추다율");
 
 	return 0;
 }
