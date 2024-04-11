@@ -17,8 +17,10 @@ public :
 	}
 
 	Student(int hakbun, string name){
-		hakbun_ = hakbun;
-		name_ = name;
+		// this : 자기 자신을 가리키는 포인터
+		// 멤버를 명확하게 가리킬 수 있음
+		this->hakbun_ = hakbun;
+		this->name_ = name;
 	}
 	
 	// 클래스의 멤버를 출력
