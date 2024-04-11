@@ -11,6 +11,11 @@ private :
 // 생성자 : 객체가 생성될 때 호출되는 함수
 // 생성자는 반환형, return 타입이 없다.
 public :
+	Student() {
+		hakbun_ = 0000;
+		name_ = "김미림";
+	}
+
 	Student(int hakbun, string name){
 		hakbun_ = hakbun;
 		name_ = name;
@@ -20,6 +25,7 @@ public :
 int main(void) {
 	
 	Student dayul = Student(2215, "추다율");
+	Student stu = Student();
 
 	return 0;
 }
