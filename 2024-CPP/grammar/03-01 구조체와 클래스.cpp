@@ -20,12 +20,20 @@ public :
 		hakbun_ = hakbun;
 		name_ = name;
 	}
+	
+	// 클래스의 멤버를 출력
+	void show(void) {
+		cout << hakbun_ << " " +  name_ << endl;
+	}
 };
 
 int main(void) {
 	
 	Student dayul = Student(2215, "추다율");
 	Student stu = Student();
+
+	dayul.show();
+	stu.show();
 
 	return 0;
 }
