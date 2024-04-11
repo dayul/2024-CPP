@@ -35,7 +35,7 @@ int main(void) {
 	// 정적 할당 : 메모리는 stack에서 할당, 컴파일 시 메모리 크기가 정해짐
 	Student stu = Student();
 
-	(*dayul).show();
+	dayul->show();
 	stu.show();
 
 	// 동적 할당 해제
