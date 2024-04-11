@@ -36,16 +36,24 @@ public :
 int main(void) {
 	
 	// 동적 할당 : 메모리는 heap에서 할당, 실행(런타임) 시 메모리 크기가 정해짐
-	Student *dayul = new Student(2215, "추다율");
+	Student* student = new Student[3]{
+		{2215, "추다율"},
+		{2202, "나지수"},
+		{2203, "박지영"}
+	};
+
+	for (int i = 0; i < 3; i++) {
+		student[i].show();		// -> 아님
+	}
 	
 	// 정적 할당 : 메모리는 stack에서 할당, 컴파일 시 메모리 크기가 정해짐
 	Student stu = Student();
 
-	dayul->show();
+	student->show();
 	stu.show();
 
-	// 동적 할당 해제
-	delete dayul;
+	// 배열의 동적 할당 해제
+	delete[] student;
 
 	return 0;
 }
