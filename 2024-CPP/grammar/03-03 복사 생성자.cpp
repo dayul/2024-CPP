@@ -17,9 +17,15 @@ public:
 		cout << "생성자 호출 완료" << endl;
 	}
 
+	// 복사 생성자
+	Student(const Student& rhs) : hakbun_(rhs.hakbun_), name_(rhs.name_) {
+		cout << "복사 생성자 호출 완료" << endl;
+	}
+
 	// 소멸자 : 객체가 소멸될 때(메모리에서 지워질 때) 호출되는 함수
 	~Student(void)
 	{
+		// TODO : 얕은 복사로 인한 이미 제거된 공간을 또 제거하려고 함, 에러 발생
 		delete[]name_;
 		cout << "소멸자 호출 완료" << endl;
 	}
@@ -39,7 +45,7 @@ private:
 int main(void)
 {
 	// 일반적인 생성자
-	Student stu = Student(2215, "추다율");
+	Student stu = Student(2215, "choo");
 
 	// 복사생성자
 	Student stu2 = stu;
