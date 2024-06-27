@@ -11,7 +11,7 @@ public:
         shape.setPosition(mX, mY);      // 위치
         shape.setRadius(10.f);          // 크기
         shape.setFillColor(sf::Color::Red);
-        shape.setOrigin(10.f, 10.f);
+        shape.setOrigin(10.f, 10.f);    // 중점으로
         velocity = { -8.f, -8.f };      // 왼쪽으로, 위로 (속도)
     }
 
@@ -89,6 +89,11 @@ int main()
         // update
         paddle.update();
         ball.update();
+
+        // 공과 패들의 충돌처리 (교집합)
+        if (ball.shape.getGlobalBounds().intersects(paddle.shape.getGlobalBounds())) {
+            ball.velocity.y = -ball.velocity.y;
+        }
 
         // draw
         // 화면 지우기 (덧그리기 때문에 지워야 함)
