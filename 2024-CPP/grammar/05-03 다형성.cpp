@@ -22,9 +22,9 @@ public:
 
 	// 멤버 함수
 	void showName() { cout << name_ << endl; }
-	void walk() { cout << "walk around" << endl; }
-	void bark() { cout << "bark" << endl; }
-	void eat() { cout << "eat something" << endl; }
+	virtual void walk() { cout << "walk around" << endl; }
+	virtual void bark() { cout << "bark" << endl; }
+	virtual void eat() { cout << "eat something" << endl; }
 };
 
 // 상속
@@ -38,7 +38,7 @@ public:
 		//this->sound_ = sound; 이것도 가능
 
 	}
-	// C++은 디폴트가 정적바인딩이기 때문에 가상함수로 오버라이딩 해야함
+
 	void walk() { cout << "촙촙촙" << endl; }
 	void bark() { cout << "멍멍" << endl; }
 	void eat() { cout << "와구와구" << endl; }
