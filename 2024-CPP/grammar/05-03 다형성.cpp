@@ -18,7 +18,7 @@ public:
 	}
 	
 	// 소멸자
-	~Animal() { cout << "소멸자 호출" << endl; }
+	~Animal() { cout << "Animal 소멸자 호출" << endl; }
 
 	// 멤버 함수
 	// 동적 바인딩 : virtual
@@ -37,8 +37,10 @@ public:
 	// 생성자
 	Dog(string name, unsigned int age, unsigned leg_num, int loyalty) : Animal(name, age, leg_num), loyalty_(loyalty) {
 		//this->sound_ = sound; 이것도 가능
-
 	}
+
+	// 소멸자
+	~Dog() { cout << "Dog 소멸자 호출" << endl; }
 
 	// 실수를 방지하기 위해 override 작성 (잘못된 함수명 작성 시 에러를 냄)
 	void walk() override { cout << "촙촙촙" << endl; }
@@ -47,19 +49,8 @@ public:
 };
 
 void main(void) {
-	// 동적 할당
-	Animal* ani = new Animal("양", 18, 2);
-	ani->walk();
-	ani->eat();
-	ani->bark();
-
-	// 소멸자 호출 (heap영역에 객체만 지워짐, ani 변수는 함수 종료 시)
-	delete ani;
-
-	ani = new Dog("마루", 5, 4, 10);
-	ani->walk();
-	ani->eat();
-	ani->bark();
-
+	// 정적 바인딩으로 인해 Dog 소멸자는 호출이 안됨
+	Animal* ani = new Dog("마루", 5, 4, 10);
+	
 	delete ani;
 }
