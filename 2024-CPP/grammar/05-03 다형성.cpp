@@ -18,7 +18,7 @@ public:
 	}
 	
 	// 소멸자
-	~Animal() { cout << "Animal 소멸자 호출" << endl; }
+	virtual ~Animal() { cout << "Animal 소멸자 호출" << endl; }
 
 	// 멤버 함수
 	// 동적 바인딩 : virtual
@@ -40,7 +40,7 @@ public:
 	}
 
 	// 소멸자
-	~Dog() { cout << "Dog 소멸자 호출" << endl; }
+	virtual ~Dog() { cout << "Dog 소멸자 호출" << endl; }
 
 	// 실수를 방지하기 위해 override 작성 (잘못된 함수명 작성 시 에러를 냄)
 	void walk() override { cout << "촙촙촙" << endl; }
@@ -49,7 +49,7 @@ public:
 };
 
 void main(void) {
-	// 정적 바인딩으로 인해 Dog 소멸자는 호출이 안됨
+	// 자식 소멸자가 먼저 호출
 	Animal* ani = new Dog("마루", 5, 4, 10);
 	
 	delete ani;
