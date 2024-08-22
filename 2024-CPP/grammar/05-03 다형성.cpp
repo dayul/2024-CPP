@@ -21,6 +21,7 @@ public:
 	~Animal() { cout << "¼Ò¸êÀÚ È£Ãâ" << endl; }
 
 	// ¸â¹ö ÇÔ¼ö
+	// µ¿Àû ¹ÙÀÎµù : virtual
 	void showName() { cout << name_ << endl; }
 	virtual void walk() { cout << "walk around" << endl; }
 	virtual void bark() { cout << "bark" << endl; }
@@ -39,9 +40,10 @@ public:
 
 	}
 
-	void walk() { cout << "ÃÏÃÏÃÏ" << endl; }
-	void bark() { cout << "¸Û¸Û" << endl; }
-	void eat() { cout << "¿Í±¸¿Í±¸" << endl; }
+	// ½Ç¼ö¸¦ ¹æÁöÇÏ±â À§ÇØ override ÀÛ¼º (Àß¸øµÈ ÇÔ¼ö¸í ÀÛ¼º ½Ã ¿¡·¯¸¦ ³¿)
+	void walk() override { cout << "ÃÏÃÏÃÏ" << endl; }
+	void bark() override { cout << "¸Û¸Û" << endl; }
+	void eat() override { cout << "¿Í±¸¿Í±¸" << endl; }
 };
 
 void main(void) {
