@@ -23,9 +23,11 @@ public:
 	// 멤버 함수
 	// 동적 바인딩 : virtual
 	void showName() { cout << name_ << endl; }
-	virtual void walk() { cout << "walk around" << endl; }
-	virtual void bark() { cout << "bark" << endl; }
-	virtual void eat() { cout << "eat something" << endl; }
+
+	// 순수 가상 함수(추상 메서드)
+	virtual void walk() = 0;
+	virtual void bark() = 0;
+	virtual void eat() = 0;
 };
 
 // 상속
@@ -50,7 +52,9 @@ public:
 
 void main(void) {
 	// 자식 소멸자가 먼저 호출
+	// Animal ani2 = Animal("마루", 5, 4);		// 추상 클래스는 객체를 생성할 수 없다 (new Animal() 불가)
 	Animal* ani = new Dog("마루", 5, 4, 10);
+	ani->bark();
 	
 	delete ani;
 }
