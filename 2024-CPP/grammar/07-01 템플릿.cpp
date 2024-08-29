@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// typename 말고, class도 가능
 template <typename T>
 T sum(T a, T b) {
 	return a + b;
