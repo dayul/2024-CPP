@@ -1,5 +1,6 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -10,17 +11,17 @@ public:
 	virtual ~Food() {}
 
 	virtual void show() {
-		cout << "±¹¹Î ¼ö : " << civil_ << endl;
-		cout << "±º·Â : " << force_ << endl;
-		cout << "ÀÌ¸§ : " << name_ << endl;
-		cout << "¸éÀû : " << territory_ << endl;
+		cout << "êµ­ë¯¼ ìˆ˜ : " << civil_ << endl;
+		cout << "êµ°ë ¥ : " << force_ << endl;
+		cout << "ì´ë¦„ : " << name_ << endl;
+		cout << "ë©´ì  : " << territory_ << endl;
 	}
 
 private:
-	int civil_;			// ±¹¹Î ¼ö
-	int force_;			// ±º·Â
-	string name_;		// ÀÌ¸§
-	int territory_;		// ¶¥ ¸éÀû
+	int civil_;			// êµ­ë¯¼ ìˆ˜
+	int force_;			// êµ°ë ¥
+	string name_;		// ì´ë¦„
+	int territory_;		// ë•… ë©´ì 
 };
 
 class Kimchi : public Food {
@@ -31,8 +32,8 @@ public:
 
 	void show() {
 		Food::show();
-		cout << "¸¶´Ã : " << garlic_ << endl;
-		cout << "°íÃß : " << pepper_ << endl;
+		cout << "ë§ˆëŠ˜ : " << garlic_ << endl;
+		cout << "ê³ ì¶” : " << pepper_ << endl;
 	}
 
 private:
@@ -48,8 +49,8 @@ public:
 
 	void show() {
 		Food::show();
-		cout << "Á©¶óÆ¾ : " << gelatin_ << endl;
-		cout << "¼³ÅÁ : " << sugar_ << endl;
+		cout << "ì ¤ë¼í‹´ : " << gelatin_ << endl;
+		cout << "ì„¤íƒ• : " << sugar_ << endl;
 	}
 
 private:
@@ -65,8 +66,8 @@ public:
 
 	void show() {
 		Food::show();
-		cout << "¿ìÀ¯ : " << milk_ << endl;
-		cout << "ÀÀ°íÁ¦ : " << rennet_ << endl;
+		cout << "ìš°ìœ  : " << milk_ << endl;
+		cout << "ì‘ê³ ì œ : " << rennet_ << endl;
 	}
 
 private:
@@ -75,12 +76,56 @@ private:
 };
 
 int main(void) {
-	Food* player = new Kimchi(15, 95, "°«±èÄ¡", 86, 100, 100);
-	Food* friends = new Cheese(100, 20, "Â¥°èÄ¡", 100, 20, 100);
-	player->show();
-	cout << endl << endl;
-	friends->show();
+	Food* player = new Kimchi(15, 95, "ê°“ê¹€ì¹˜", 86, 100, 100);
+	Food* friends = new Cheese(100, 20, "ì§œê³„ì¹˜", 100, 20, 100);
 
+	while (true) {
+		system("cls");
+
+		cout << "(â™¥ Ï‰ â™¥) ë‚˜" << endl;
+		player->show();
+
+		cout << endl << endl;
+		cout << "(â˜… Ï‰ â˜…) ìƒëŒ€ë°©" << endl;
+		friends->show();
+
+		int select;
+		cout << "\n\n=====================" << endl;
+		cout << "ï½¡â˜†âœ¼â˜… ì•„ì´í…œ ì„ íƒ â˜…âœ¼â˜†ï½¡" << endl;
+		cout << "=====================" << endl;
+		cout << "  (1) ê³µê²©" << endl;
+		cout << "  (2) íŠ¹ìˆ˜1" << endl;
+		cout << "  (3) íŠ¹ìˆ˜2" << endl;
+		cout << "  (4) ë°©ì–´" << endl;
+		cout << "=====================" << endl;
+		cout << ">> ";
+		cin >> select;
+		
+
+		switch (select) {
+		case 1:
+			// TODO : ê³µê²©
+			cout << "ê³µê²©" << endl;
+			break;
+		case 2:
+			// TODO : íŠ¹ìˆ˜1
+			cout << "íŠ¹ìˆ˜1" << endl;
+			break;
+		case 3:
+			// TODO : íŠ¹ìˆ˜2
+			cout << "íŠ¹ìˆ˜2" << endl;
+			break;
+		case 4:
+			// TODO : ë°©ì–´
+			cout << "ë°©ì–´" << endl;
+			break;
+
+		default:
+			cout << "ìž˜ëª»ëœ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•˜ì„¸ìš”." << endl;
+		}
+
+		system("pause");
+	}
 
 	delete friends;
 	delete player;
