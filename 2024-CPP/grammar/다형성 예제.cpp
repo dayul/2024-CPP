@@ -30,7 +30,9 @@ public:
 class Kimchi : public Food {
 public:
 	Kimchi(int civil, int force, string name, int territory, int garlic, int pepper)
-		: Food(civil, force, name, territory), garlic_(garlic), pepper_(pepper) {}
+		: Food(civil, force, name, territory), garlic_(garlic), pepper_(pepper) {
+		critical_damage_ = 0;
+	}
 	virtual ~Kimchi() {}
 
 	void show() {
@@ -39,11 +41,17 @@ public:
 		cout << "고추 : " << pepper_ << endl;
 	}
 
+	// 기본 공격 매 3타마다 크리티컬 데미지
 	void attack(Food* target) override {
-		target->force_ -= this->force_ * 2;
+		critical_damage_++;
+		if (critical_damage_ % 3 == 0) 
+			target->force_ -= this->force_ * 2;
+
+		else target->force_ -= this->force_;
 	}
 
 //private:
+	int critical_damage_;
 	int garlic_;
 	int pepper_;
 };
