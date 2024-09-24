@@ -44,9 +44,13 @@ int main(void) {
 	v.pop_back();
 	v.pop_back();
 
-	for (int i = 0; i < v.size(); i++) {
-		cout << v[i] << endl;
+	// 반복자 iterator 사용
+	vector<long long>::iterator iter;
+
+	for (iter = v.begin(); iter != v.end(); iter++) {
+		cout << *iter << endl;
 	}
+
 	cout << "제거 후 크기 : " << v.size() << endl;
 
 	return 0;
