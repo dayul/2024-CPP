@@ -9,7 +9,10 @@ class example {
 
 int main(void) {
 
-	vector<int> v;
+	vector<long long> v;
+
+	// 미리 공간을 많이 확보하자, 성능을 위해
+	v.reserve(100);
 
 	// 벡터 추가
 	v.push_back(4);
