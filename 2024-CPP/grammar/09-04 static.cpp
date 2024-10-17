@@ -8,7 +8,11 @@ public:
 	{
 		num_++;
 	}
-	static string get_teacher(void) { return teacher_; }
+	// static 메소드에는 static 변수만(일반 멤버변수는 객체 생성 후 사용 가능)
+	static string get_teacher(void) { 
+		//num_ = "다율";			안됨!
+		return teacher_; 
+	}
 	static int get_num(void) { return num_; }
 	string get_name(void) { return name_; }
 private:
