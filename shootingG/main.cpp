@@ -22,7 +22,18 @@ int main() {
 		RectangleShape player;
 		player.setSize(Vector2f(181.f, 75.f));
 		player.setFillColor(Color::Magenta);
-		player.setPosition(500.f, 400.f);
+		player.setPosition((App::WIDTH / 2.f) - player.getSize().x, 600.f);
+
+		// static method
+		// TODO : 제대로 이동하도록 고치기
+		if (Keyboard::isKeyPressed(Keyboard::Left))
+			player.move(-10, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Right))
+			player.move(10, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Up))
+			player.move(0, -10);
+		if (Keyboard::isKeyPressed(Keyboard::Down))
+			player.move(0, 10);
 
 		window.clear();
 		window.draw(player);
