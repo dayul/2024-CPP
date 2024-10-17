@@ -3,10 +3,11 @@
 using namespace sf;
 using namespace std;
 
-#define	WINDOW_WIDTH 1200
-#define	WINDOW_HEIGHT 700
-
 int main() {
+
+	const int WINDOW_WIDTH = 1200;
+	const int WINDOW_HEIGHT = 700;
+
 	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "shootingG");
 
 	while (window.isOpen()) {
