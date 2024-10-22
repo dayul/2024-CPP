@@ -11,6 +11,8 @@ int main() {
 	};
 
 	RenderWindow window(VideoMode(App::WIDTH, App::HEIGHT), "shootingG");
+	window.setFramerateLimit(60);		// 초당 프레임(속도) 조절
+
 	RectangleShape player;
 	player.setSize(Vector2f(181.f, 75.f));
 	player.setFillColor(Color::Magenta);
