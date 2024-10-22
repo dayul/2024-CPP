@@ -11,6 +11,10 @@ int main() {
 	};
 
 	RenderWindow window(VideoMode(App::WIDTH, App::HEIGHT), "shootingG");
+	RectangleShape player;
+	player.setSize(Vector2f(181.f, 75.f));
+	player.setFillColor(Color::Magenta);
+	player.setPosition((App::WIDTH / 2.f) - player.getSize().x, 600.f);
 
 	while (window.isOpen()) {
 		Event event;
@@ -18,12 +22,6 @@ int main() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		
-		RectangleShape player;
-		player.setSize(Vector2f(181.f, 75.f));
-		player.setFillColor(Color::Magenta);
-		player.setPosition((App::WIDTH / 2.f) - player.getSize().x, 600.f);
-
 		// static method
 		// TODO : 제대로 이동하도록 고치기
 		if (Keyboard::isKeyPressed(Keyboard::Left))
